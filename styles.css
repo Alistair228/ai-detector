@@ -34,6 +34,17 @@ header .container {
     padding: 15px;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 80px;
+    width: auto;
+    margin-right: 1px;
+}
+
 .logo h1 {
     font-size: 24px;
     font-weight: 700;
@@ -57,26 +68,46 @@ nav ul li a {
 }
 
 nav ul li a:hover, nav ul li a.active {
-    color: #4a69bd;
+    color: #8d9cc4;
 }
 
 /* 英雄區塊 */
 .hero {
-    background: linear-gradient(135deg, #4a69bd 0%, #6a89cc 100%);
+    position: relative;
     color: white;
-    padding: 60px 0;
+    padding: 80px 0;
     text-align: center;
+    background-image: url('mike-kononov-lFv0V3_2H6s-unsplash.jpg');  /* 預設背景圖片 */
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(5deg, rgba(203, 208, 220, 0.5) 0%, rgba(106, 137, 204, 0.5) 100%);
+    z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 2.8rem;
+    margin-bottom: 1.2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     max-width: 700px;
     margin: 0 auto;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* 檢測器區塊 */
@@ -90,6 +121,12 @@ nav ul li a:hover, nav ul li a.active {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     padding: 30px;
     margin-bottom: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .card h2 {
@@ -118,6 +155,7 @@ textarea {
 textarea:focus {
     outline: none;
     border-color: #4a69bd;
+    box-shadow: 0 0 0 2px rgba(74, 105, 189, 0.2);
 }
 
 .counter {
@@ -139,16 +177,22 @@ button {
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
     background-color: #3d5aa1;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
 }
 
 button.disabled {
     background-color: #ccc;
     cursor: not-allowed;
+    transform: none;
 }
 
 .loader {
@@ -299,6 +343,11 @@ button.disabled {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     padding: 25px;
     margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
 }
 
 .feature h3 {
@@ -337,9 +386,11 @@ footer .container {
     color: white;
     margin-left: 20px;
     text-decoration: none;
+    transition: opacity 0.3s;
 }
 
 .footer-links a:hover {
+    opacity: 0.8;
     text-decoration: underline;
 }
 
@@ -363,5 +414,13 @@ footer .container {
     
     .footer-links a {
         margin: 0 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
     }
 }
