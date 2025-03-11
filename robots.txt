@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://您的網站域名.com/sitemap.xml

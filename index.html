@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免費的人工智能內容檢測器，檢測文本是否由AI生成。無需註冊，立即檢測您的內容。">
+    <title>AI內容檢測器 - 免費檢測AI生成內容</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>AI檢測器</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首頁</a></li>
+                    <li><a href="#about">關於我們</a></li>
+                    <li><a href="#faq">常見問題</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>免費檢測AI生成內容</h1>
+                <p>我們的AI檢測系統可以幫助您確定內容是人類撰寫還是由AI生成。只需貼上您的文本，立即獲得檢測結果。</p>
+            </div>
+        </section>
+
+        <section class="detector">
+            <div class="container">
+                <div class="card">
+                    <h2>AI內容檢測</h2>
+                    <div class="input-area">
+                        <textarea id="text-input" placeholder="在此處粘貼您的文字內容 (至少100個字)"></textarea>
+                        <div class="counter">
+                            <span id="character-count">0</span> 個字符
+                        </div>
+                    </div>
+                    <button id="check-button" class="disabled">檢測內容</button>
+                    <div class="loader" id="loader">
+                        <div class="spinner"></div>
+                        <p>檢測中，請稍候...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="results" id="results-section" style="display: none;">
+            <div class="container">
+                <div class="card">
+                    <h2>檢測結果</h2>
+                    <div class="result-display">
+                        <div class="gauge">
+                            <div class="gauge-body">
+                                <div class="gauge-fill" id="gauge-fill"></div>
+                                <div class="gauge-cover"></div>
+                            </div>
+                            <div class="percentage">
+                                <span id="ai-percentage">0</span>%
+                            </div>
+                        </div>
+                        <p class="result-text" id="result-text">文本分析結果將顯示在這裡</p>
+                    </div>
+                    <div class="details">
+                        <h3>詳細分析</h3>
+                        <div class="detail-item">
+                            <span class="label">語言一致性：</span>
+                            <div class="meter">
+                                <div class="meter-fill" id="consistency-meter"></div>
+                            </div>
+                            <span class="value" id="consistency-value">0%</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">用詞多樣性：</span>
+                            <div class="meter">
+                                <div class="meter-fill" id="diversity-meter"></div>
+                            </div>
+                            <span class="value" id="diversity-value">0%</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">句法複雜度：</span>
+                            <div class="meter">
+                                <div class="meter-fill" id="complexity-meter"></div>
+                            </div>
+                            <span class="value" id="complexity-value">0%</span>
+                        </div>
+                    </div>
+                    <button id="check-another">檢測另一段文本</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="container">
+                <h2>關於我們的AI檢測系統</h2>
+                <div class="features">
+                    <div class="feature">
+                        <h3>高精度檢測</h3>
+                        <p>我們的系統利用先進的自然語言處理技術，可以有效識別由ChatGPT、GPT-4等AI系統生成的內容。</p>
+                    </div>
+                    <div class="feature">
+                        <h3>完全免費</h3>
+                        <p>我們的檢測工具完全免費使用，無需註冊或提供個人資訊。</p>
+                    </div>
+                    <div class="feature">
+                        <h3>保護隱私</h3>
+                        <p>我們不會儲存您提交的任何文本內容，所有檢測都在您的瀏覽器中完成。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq" id="faq">
+            <div class="container">
+                <h2>常見問題</h2>
+                <div class="faq-item">
+                    <h3>您如何檢測AI生成的內容？</h3>
+                    <p>我們的系統分析文本的多個方面，包括語言模式、句法複雜度、用詞多樣性等特徵，這些特徵通常可以區分人類和AI撰寫的內容。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>檢測結果有多準確？</h3>
+                    <p>我們的檢測系統精確度在85-95%之間，但結果仍應視為參考，因為AI技術不斷進步，檢測難度也隨之增加。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>檢測系統支持哪些語言？</h3>
+                    <p>目前我們主要支持中文和英文內容的檢測，其他語言的支持正在開發中。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 AI檢測器. 保留所有權利.</p>
+            <div class="footer-links">
+                <a href="#">隱私政策</a>
+                <a href="#">使用條款</a>
+                <a href="#contact">聯絡我們</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
