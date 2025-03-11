@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://您的網站域名.com/sitemap.xml
+Sitemap: https://alistair228.github.io/ai-detector/sitemap.xml
